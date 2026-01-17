@@ -1,105 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Amisha Patel | Research Portfolio</title>
+<meta charset="UTF-8">
+<title>Amisha Patel | Research Portfolio</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-            color: #333;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        header {
-            background-color: #1f2933;
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
 
-        section {
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
+body {
+    font-family: Poppins, sans-serif;
+    background:#020617;
+    color:#e5e7eb;
+    scroll-behavior:smooth;
+}
 
-        h2 {
-            color: #1f2933;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 8px;
-        }
+a { color:#38bdf8; text-decoration:none; }
 
-        ul li {
-            margin-bottom: 15px;
-        }
+header {
+    height:100vh;
+    background:linear-gradient(135deg,#020617,#1e293b);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #1f2933;
-            color: white;
-            margin-top: 40px;
-        }
-    </style>
+header h1 {
+    font-size:3.5rem;
+}
+
+header p {
+    opacity:0.85;
+    margin-top:10px;
+}
+
+.btn {
+    margin-top:25px;
+    padding:12px 30px;
+    border-radius:30px;
+    background:#38bdf8;
+    color:black;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover {
+    background:white;
+}
+
+section {
+    max-width:1100px;
+    margin:auto;
+    padding:80px 30px;
+}
+
+h2 {
+    font-size:2.2rem;
+    border-left:6px solid #38bdf8;
+    padding-left:15px;
+    margin-bottom:40px;
+}
+
+.card {
+    background:#020617;
+    border-radius:16px;
+    padding:35px;
+    margin-bottom:40px;
+    box-shadow:0 0 30px rgba(56,189,248,0.15);
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s;
+}
+
+.card.visible {
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card h3 {
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.timeline {
+    border-left:3px solid #38bdf8;
+    padding-left:30px;
+}
+
+.timeline div {
+    margin-bottom:35px;
+}
+
+footer {
+    text-align:center;
+    padding:30px;
+    background:#020617;
+    opacity:0.8;
+}
+</style>
 </head>
 
 <body>
 
 <header>
     <h1>Amisha Patel</h1>
-    <p>Integrated MSc Mathematics | Machine Learning Researcher</p>
+    <p>Integrated MSc Mathematics · Machine Learning Researcher</p>
     <p>NIT Rourkela</p>
+
+    <a class="btn" href="cv.pdf" target="_blank">Download CV</a>
 </header>
 
 <section>
-    <h2>About Me</h2>
-    <p>
-        I am an Integrated MSc Mathematics student at NIT Rourkela with strong
-        interests in Machine Learning, AI research, and applied mathematics.
-        I have worked on healthcare AI and climate-risk prediction projects.
-    </p>
+<h2>About Me</h2>
+<p>
+I am an Integrated MSc Mathematics student at NIT Rourkela with a strong interest in
+machine learning, artificial intelligence, and applied mathematical modeling.
+My research experience spans healthcare analytics, road safety prediction,
+and spatiotemporal deep learning using satellite and structured datasets.
+</p>
 </section>
 
 <section>
-    <h2>Projects</h2>
-    <ul>
-        <li>
-            <b>Forest Fire Risk Prediction</b><br>
-            U-Net based deep learning model with geospatial ETL pipeline
-            (<a href="https://github.com/amishapatel20" target="_blank">GitHub</a>)
-        </li>
+<h2>Research Experience</h2>
 
-        <li>
-            <b>Lung Sound Disease Classifier</b><br>
-            Audio ML pipeline using FFT and Random Forest
-        </li>
+<div class="card">
+<h3>Forest Fire Risk Prediction (Summer Research Intern)</h3>
+<p>
+Developed a production-grade deep learning system for next-day forest fire risk prediction
+using satellite imagery and geospatial data. Built scalable ETL pipelines processing
+30M+ samples and trained a U-Net segmentation model achieving 93% pixel accuracy.
+</p>
+<p><b>Tech:</b> TensorFlow · U-Net · Google Earth Engine · FastAPI · React</p>
+</div>
 
-        <li>
-            <b>SafeRoadAI</b><br>
-            Accident severity prediction with AI-based awareness system
-        </li>
-
-        <li>
-            <b>PostGini</b><br>
-            AI-powered social media automation for hotels
-        </li>
-    </ul>
 </section>
 
 <section>
-    <h2>Contact</h2>
-    <p>Email: amishanitr23july@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/amishapatel20" target="_blank">github.com/amishapatel20</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com" target="_blank">LinkedIn Profile</a></p>
+<h2>Projects</h2>
+
+<div class="card">
+<h3>🚦 SafeRoadAI — Intelligent Road Safety Prediction</h3>
+<p>
+SafeRoadAI predicts real-time travel risk using weather conditions, traffic density,
+road geometry, and historical accident patterns. The system outputs safety scores,
+risk levels, and nearby danger zones via an interactive web interface.
+</p>
+<p><b>Tech:</b> Python · ML · FastAPI · Geospatial Analysis</p>
+<a href="https://github.com/amishapatel20/SafeRoadAI" target="_blank">GitHub →</a>
+</div>
+
+<div class="card">
+<h3>🌍 Global Crime Analysis Dashboard</h3>
+<p>
+Interactive analytics platform visualizing worldwide crime trends across 40 years of data.
+Allows exploration of violent crime rates, geographical distributions,
+and long-term temporal patterns.
+</p>
+<p><b>Tech:</b> Python · Data Visualization · Data Analysis</p>
+<a href="https://github.com/amishapatel20/Global-Crime-Analysis-" target="_blank">GitHub →</a>
+</div>
+
+<div class="card">
+<h3>🫁 Lung Sound Disease Classifier</h3>
+<p>
+End-to-end audio ML pipeline for classifying lung diseases using FFT-based signal features
+and Random Forest classifiers. Achieved 91% test accuracy under class imbalance.
+</p>
+<p><b>Tech:</b> Librosa · FFT · Random Forest · FastAPI</p>
+</div>
+
+</section>
+
+<section>
+<h2>Timeline</h2>
+
+<div class="timeline">
+<div>
+<b>2022 – Present</b><br>
+Integrated MSc Mathematics, NIT Rourkela
+</div>
+
+<div>
+<b>2025</b><br>
+Summer Research Internship – Forest Fire Prediction
+</div>
+
+<div>
+<b>2025</b><br>
+Winner – T&P Hackathon (PostGini)
+</div>
+
+<div>
+<b>2025</b><br>
+Amazon ML Challenge – Top 300 worldwide
+</div>
+</div>
+</section>
+
+<section>
+<h2>Contact</h2>
+<p>Email: amishanitr23july@gmail.com</p>
+<p>GitHub: https://github.com/amishapatel20</p>
+<p>LinkedIn: https://linkedin.com</p>
 </section>
 
 <footer>
-    © 2026 Amisha Patel
+© 2026 Amisha Patel
 </footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.classList.add("visible");}
+});
+});
+
+document.querySelectorAll(".card").forEach(c=>observer.observe(c));
+</script>
 
 </body>
 </html>
+
