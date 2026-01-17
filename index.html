@@ -1,164 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amisha Patel | Research Portfolio</title>
+
+<title>Amisha Patel | Machine Learning Research Portfolio</title>
+
+<meta name="description"
+content="Machine learning researcher focusing on forest fire prediction, satellite-based risk modeling, U-Net segmentation, and environmental AI systems.">
+
+<meta name="keywords"
+content="Machine Learning, Forest Fire Prediction, U-Net, Satellite Data, Google Earth Engine, Research Portfolio">
+
+<meta name="author" content="Amisha Patel">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --bg:#020617;
-    --card:#020617;
-    --accent:#38bdf8;
-    --text:#e5e7eb;
-    --muted:#94a3b8;
+:root{
+--bg:#020617;
+--card:#020617;
+--accent:#38bdf8;
+--text:#e5e7eb;
+--muted:#94a3b8;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:Inter, sans-serif;
-    background:linear-gradient(180deg,#020617,#020617,#020617);
-    color:var(--text);
-    line-height:1.7;
+font-family:Inter,sans-serif;
+background:#020617;
+color:var(--text);
+line-height:1.7;
 }
 
-/* NAVBAR */
+a{color:var(--accent);text-decoration:none}
+
 nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(2,6,23,0.9);
-    backdrop-filter:blur(12px);
-    z-index:1000;
-    border-bottom:1px solid #0f172a;
+position:fixed;
+width:100%;
+background:rgba(2,6,23,.9);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #0f172a;
+z-index:1000;
 }
+
 nav ul{
-    max-width:1200px;
-    margin:auto;
-    padding:15px 30px;
-    display:flex;
-    justify-content:space-between;
-    list-style:none;
+max-width:1200px;
+margin:auto;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+list-style:none;
 }
-nav a{
-    color:var(--text);
-    text-decoration:none;
-    font-weight:600;
-    margin-left:25px;
-}
+
+nav a{margin-left:25px;font-weight:600;color:var(--text);}
 nav a:hover{color:var(--accent);}
 
-/* HERO */
 .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:120px 30px 60px;
+min-height:100vh;
+padding:140px 30px 80px;
+text-align:center;
 }
+
 .hero h1{
-    font-size:3.6rem;
-    font-weight:800;
+font-size:3.8rem;
+font-weight:800;
 }
-.hero span{color:var(--accent);}
+
+.hero span{color:var(--accent)}
+
 .hero p{
-    max-width:750px;
-    margin:20px auto;
-    color:var(--muted);
-    font-size:1.1rem;
-}
-.hero .btns a{
-    display:inline-block;
-    margin:15px 10px;
-    padding:14px 34px;
-    border-radius:40px;
-    background:var(--accent);
-    color:black;
-    font-weight:700;
-    text-decoration:none;
-}
-.hero .btns a.outline{
-    background:none;
-    color:var(--accent);
-    border:2px solid var(--accent);
+max-width:900px;
+margin:25px auto;
+color:var(--muted);
+font-size:1.15rem;
 }
 
-/* SECTIONS */
+.btn{
+display:inline-block;
+margin:20px 12px;
+padding:14px 36px;
+border-radius:40px;
+background:var(--accent);
+color:black;
+font-weight:700;
+}
+
+.outline{
+background:none;
+border:2px solid var(--accent);
+color:var(--accent);
+}
+
 section{
-    max-width:1200px;
-    margin:auto;
-    padding:90px 30px;
+max-width:1200px;
+margin:auto;
+padding:90px 30px;
 }
+
 h2{
-    font-size:2.2rem;
-    margin-bottom:40px;
-    border-left:6px solid var(--accent);
-    padding-left:15px;
+font-size:2.4rem;
+border-left:6px solid var(--accent);
+padding-left:15px;
+margin-bottom:45px;
 }
 
-/* CARDS */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
 .card{
-    background:linear-gradient(180deg,#020617,#020617);
-    border-radius:18px;
-    padding:35px;
-    box-shadow:0 0 35px rgba(56,189,248,0.12);
-    transition:.4s;
-}
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 50px rgba(56,189,248,0.25);
-}
-.card h3{
-    color:var(--accent);
-    margin-bottom:10px;
+background:#020617;
+border-radius:18px;
+padding:40px;
+box-shadow:0 0 45px rgba(56,189,248,.18);
+margin-bottom:40px;
 }
 
-/* CV */
-.cvbox{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-}
-.cvbox iframe{
-    width:100%;
-    height:500px;
-    border-radius:12px;
-    border:1px solid #0f172a;
+.badge{
+display:inline-block;
+padding:6px 14px;
+border-radius:20px;
+background:#0f172a;
+color:var(--accent);
+font-size:.8rem;
+margin:6px 6px 12px 0;
 }
 
-/* FOOTER */
+iframe{
+width:100%;
+height:520px;
+border-radius:14px;
+border:1px solid #0f172a;
+}
+
+.fade{opacity:0;transform:translateY(40px);transition:1s;}
+.fade.show{opacity:1;transform:none;}
+
 footer{
-    text-align:center;
-    padding:40px;
-    background:#020617;
-    color:var(--muted);
-}
-
-/* ANIMATIONS */
-.fade{
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-.fade.show{
-    opacity:1;
-    transform:none;
-}
-
-@media(max-width:900px){
-    .cvbox{grid-template-columns:1fr;}
-    .hero h1{font-size:2.6rem;}
+text-align:center;
+padding:40px;
+color:var(--muted);
 }
 </style>
 </head>
@@ -169,8 +149,8 @@ footer{
 <ul>
 <li><b>Amisha Patel</b></li>
 <li>
-<a href="#about">About</a>
 <a href="#research">Research</a>
+<a href="#agnirodhak">Agnirodhak</a>
 <a href="#projects">Projects</a>
 <a href="#cv">CV</a>
 <a href="#contact">Contact</a>
@@ -178,106 +158,116 @@ footer{
 </ul>
 </nav>
 
-<section class="hero">
+<section class="hero fade">
 <h1>Amisha <span>Patel</span></h1>
-<p>
-Mathematics undergraduate at NIT Rourkela working at the intersection of
-machine learning, artificial intelligence, and applied mathematical modeling.
-Experienced in healthcare AI, climate-risk prediction, and large-scale data systems.
-</p>
-<div class="btns">
-<a href="cv.pdf" target="_blank">Download CV</a>
-<a class="outline" href="https://github.com/amishapatel20" target="_blank">GitHub</a>
-</div>
-</section>
 
-<section id="about" class="fade">
-<h2>About</h2>
 <p>
-I am currently pursuing an Integrated MSc in Mathematics at NIT Rourkela.
-My academic interests include machine learning, probabilistic modeling,
-deep learning for spatiotemporal data, and AI-driven decision systems.
-I enjoy bridging rigorous mathematical foundations with real-world AI applications.
+Integrated MSc Mathematics student at NIT Rourkela with research interests in
+machine learning, spatiotemporal modeling, and environmental risk prediction.
+Experienced in satellite-data pipelines, deep learning segmentation models,
+and end-to-end deployment of AI systems.
 </p>
+
+<a class="btn" href="#agnirodhak">Flagship Research</a>
+<a class="btn outline" href="cv.pdf" target="_blank">Download CV</a>
 </section>
 
 <section id="research" class="fade">
-<h2>Research Experience</h2>
+<h2>Research Interests</h2>
 
-<div class="grid">
-<div class="card">
-<h3>Forest Fire Risk Prediction</h3>
 <p>
-Developed a scalable deep learning system for next-day forest fire risk prediction
-using satellite imagery and geospatial features. Built ETL pipelines handling
-30M+ samples and trained a U-Net segmentation model achieving 93% pixel accuracy.
+My primary research interest lies in applying machine learning and deep learning
+to large-scale geospatial and temporal datasets. I focus on predictive risk modeling,
+environmental monitoring, and interpretable AI systems that support
+real-world decision making.
 </p>
-</div>
+
+<p>
+Current areas of interest include satellite-based fire forecasting,
+climate-risk assessment, spatial segmentation models,
+and data-driven early warning systems.
+</p>
+</section>
+
+<section id="agnirodhak" class="fade">
+<h2>Flagship Research Project</h2>
 
 <div class="card">
-<h3>Healthcare Machine Learning</h3>
+<h3>Agnirodhak — Forest Fire Early Warning System for Uttarakhand</h3>
+
+<span class="badge">U-Net</span>
+<span class="badge">Satellite Data</span>
+<span class="badge">Spatiotemporal ML</span>
+<span class="badge">Google Earth Engine</span>
+
+<h4>Abstract</h4>
 <p>
-Built medical audio classification systems using lung auscultation sounds.
-Designed FFT-based interpretable features and trained Random Forest classifiers
-for respiratory disease detection.
+Agnirodhak is a machine-learning–driven forest fire early warning system
+designed to forecast next-day wildfire risk across Uttarakhand, India.
+The system integrates vegetation indices (NDVI), meteorological variables,
+terrain attributes, and historical fire occurrence data derived from
+satellite observations.
 </p>
-</div>
+
+<h4>Methodology</h4>
+<p>
+A U-Net convolutional neural network performs pixel-wise risk segmentation
+on 1 km × 1 km spatial grids. The pipeline includes large-scale ETL processing
+(30M+ samples), normalization, temporal stacking, and tiled inference.
+</p>
+
+<h4>Results</h4>
+<p>
+The model achieves stable next-day forecasts with approximately
+93% pixel-level accuracy on validation data.
+Predicted high-risk zones are visualized through an interactive web dashboard.
+</p>
+
+<p>
+📄 <a href="agnirodhak_abstract.pdf" target="_blank">Project Abstract (PDF)</a>
+</p>
+
+<p>
+🗺️ Visualization Demo (GIF will load automatically once uploaded)
+</p>
+
+<img src="agnirodhak_demo.gif" style="width:100%;border-radius:12px;" alt="Fire Risk Prediction Map">
 </div>
 </section>
 
 <section id="projects" class="fade">
-<h2>Projects</h2>
-
-<div class="grid">
+<h2>Other Research Projects</h2>
 
 <div class="card">
-<h3>🚦 SafeRoadAI</h3>
+<h3>SafeRoadAI — Road Safety Risk Prediction</h3>
 <p>
-Intelligent road safety prediction system generating safety scores,
-risk levels, and danger-zone visualization using ML-based pipelines.
+Machine-learning system predicting travel risk using accident records,
+weather conditions, traffic density, and road geometry.
 </p>
-<a href="https://github.com/amishapatel20/SafeRoadAI" target="_blank">View Project →</a>
+<a href="https://github.com/amishapatel20/SafeRoadAI" target="_blank">GitHub →</a>
 </div>
 
 <div class="card">
-<h3>🫁 AuscultoML</h3>
+<h3>AuscultoML — Lung Sound Disease Classification</h3>
 <p>
-Medical lung sound disease classification using FFT band-energy features
-and Random Forest models with FastAPI deployment.
+Medical audio analysis pipeline using FFT-based signal processing and
+Random Forest classifiers for respiratory disease detection.
 </p>
-<a href="https://github.com/amishapatel20/AuscultoML-Lung-Sound-Disease-Classification" target="_blank">
-View Project →
-</a>
+<a href="https://github.com/amishapatel20/AuscultoML-Lung-Sound-Disease-Classification" target="_blank">GitHub →</a>
 </div>
 
 <div class="card">
-<h3>🌍 Global Crime Analysis</h3>
+<h3>Global Crime Analysis Dashboard</h3>
 <p>
-Interactive dashboard analyzing 40+ years of global crime trends
-with regional and temporal visualization.
+Exploratory analytics platform visualizing global crime trends across four decades.
 </p>
-<a href="https://github.com/amishapatel20/Global-Crime-Analysis-" target="_blank">
-View Project →
-</a>
-</div>
-
+<a href="https://github.com/amishapatel20/Global-Crime-Analysis-" target="_blank">GitHub →</a>
 </div>
 </section>
 
 <section id="cv" class="fade">
 <h2>Curriculum Vitae</h2>
-
-<div class="cvbox">
-<div>
-<p>
-You can preview my CV directly below or download the full version as PDF.
-</p>
-<br>
-<a class="btns" href="cv.pdf" target="_blank">Download CV</a>
-</div>
-
 <iframe src="cv.pdf"></iframe>
-</div>
 </section>
 
 <section id="contact" class="fade">
@@ -287,17 +277,16 @@ You can preview my CV directly below or download the full version as PDF.
 </section>
 
 <footer>
-© 2026 Amisha Patel · Research Portfolio
+© 2026 Amisha Patel · Machine Learning Research Portfolio
 </footer>
 
 <script>
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting)e.target.classList.add("show");
+const o=new IntersectionObserver(e=>{
+e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});
 });
-});
-document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+document.querySelectorAll(".fade").forEach(el=>o.observe(el));
 </script>
 
 </body>
 </html>
+
