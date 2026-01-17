@@ -1,188 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amisha Patel | ML Research Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amisha Patel | Machine Learning Research</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#0b1220;
-  --card:#111827;
-  --glass:rgba(255,255,255,0.04);
-  --accent:#38bdf8;
-  --accent2:#60a5fa;
+/* ================= ROOT ================= */
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --accent:#2563eb;
+  --border:#e5e7eb;
+}
+
+/* Dark mode variables */
+body.dark{
+  --bg:#020617;
   --text:#e5e7eb;
   --muted:#94a3b8;
+  --accent:#38bdf8;
+  --border:#1e293b;
 }
 
+/* ================= BASE ================= */
 *{margin:0;padding:0;box-sizing:border-box}
-
 html{scroll-behavior:smooth}
-
 body{
   font-family:Inter,sans-serif;
-  background:
-    radial-gradient(circle at 20% 20%, #1e293b 0%, transparent 40%),
-    radial-gradient(circle at 80% 30%, #0f172a 0%, transparent 45%),
-    #020617;
+  background:var(--bg);
   color:var(--text);
+  line-height:1.65;
+  transition:.3s;
 }
 
-/* NAVBAR */
+/* ================= NAV ================= */
 nav{
   position:fixed;
   top:0;
   width:100%;
-  backdrop-filter:blur(14px);
-  background:rgba(2,6,23,.7);
-  border-bottom:1px solid #0f172a;
-  z-index:999;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
 }
 nav ul{
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
-  padding:16px 30px;
+  padding:18px 28px;
   display:flex;
   justify-content:space-between;
+  align-items:center;
   list-style:none;
 }
 nav a{
-  color:var(--text);
   margin-left:24px;
+  color:var(--muted);
   font-weight:600;
+  text-decoration:none;
 }
+nav a.active,
 nav a:hover{color:var(--accent)}
+#themeToggle{
+  margin-left:18px;
+  border:1px solid var(--border);
+  background:none;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
 
-/* HERO */
+/* ================= SECTIONS ================= */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:100px 28px;
+}
+
+/* ================= HERO ================= */
 .hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  text-align:center;
-  padding:140px 30px 80px;
+  padding-top:160px;
 }
 .hero h1{
-  font-size:3.8rem;
-  font-weight:800;
-}
-.hero span{color:var(--accent)}
-.hero p{
-  max-width:820px;
-  margin:28px auto;
-  font-size:1.15rem;
-  color:var(--muted);
-}
-.hero .btn{
-  display:inline-block;
-  margin:16px 10px;
-  padding:14px 36px;
-  border-radius:40px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:black;
+  font-size:3.2rem;
   font-weight:700;
 }
-.hero .btn.outline{
-  background:none;
-  border:2px solid var(--accent);
+.hero h2{
+  margin:14px 0 28px;
+  color:var(--muted);
+  font-size:1.3rem;
+}
+.hero p{
+  max-width:820px;
+}
+.links a{
+  margin-right:20px;
+  font-weight:600;
   color:var(--accent);
 }
 
-/* SECTIONS */
-section{
-  max-width:1200px;
-  margin:auto;
-  padding:90px 30px;
-}
-h2{
-  font-size:2.4rem;
-  margin-bottom:45px;
-  border-left:6px solid var(--accent);
-  padding-left:16px;
+/* ================= TITLES ================= */
+.section-title{
+  font-size:1.6rem;
+  margin-bottom:30px;
+  font-weight:700;
 }
 
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:32px;
+/* ================= BLOCKS ================= */
+.block{
+  margin-bottom:42px;
 }
-.card{
-  background:var(--glass);
-  backdrop-filter:blur(10px);
-  border-radius:20px;
-  padding:36px;
-  box-shadow:0 0 45px rgba(56,189,248,.12);
-  transition:.4s;
-}
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 70px rgba(56,189,248,.25);
-}
-.card h3{
-  color:var(--accent);
-  margin-bottom:10px;
-}
-.badge{
-  display:inline-block;
-  padding:6px 14px;
-  border-radius:20px;
-  background:#0f172a;
-  color:var(--accent);
-  font-size:.75rem;
-  margin:6px 6px 12px 0;
+.block h4{margin-bottom:6px}
+.block span{
+  color:var(--muted);
+  font-size:.95rem;
 }
 
-/* SKILLS */
+/* ================= SKILLS ================= */
 .skills{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:26px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
 }
 .skill{
-  background:var(--glass);
-  padding:26px;
-  border-radius:18px;
-}
-.bar{
-  height:10px;
-  background:#0f172a;
-  border-radius:8px;
-  margin-top:8px;
-  overflow:hidden;
-}
-.bar span{
-  height:100%;
-  display:block;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  border:1px solid var(--border);
+  padding:6px 14px;
+  border-radius:6px;
+  font-size:.9rem;
 }
 
-/* CV */
+/* ================= CV ================= */
 iframe{
   width:100%;
   height:520px;
-  border-radius:18px;
-  border:1px solid #0f172a;
+  border-radius:8px;
+  border:1px solid var(--border);
   background:white;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  color:var(--muted);
-}
-
-/* ANIMATION */
+/* ================= ANIMATION ================= */
 .fade{
   opacity:0;
-  transform:translateY(40px);
-  transition:1s;
+  transform:translateY(25px);
+  transition:.7s;
 }
-.fade.show{opacity:1;transform:none}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:50px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+}
 </style>
 </head>
 
@@ -196,128 +171,165 @@ footer{
 <a href="#skills">Skills</a>
 <a href="#cv">CV</a>
 <a href="#contact">Contact</a>
+<button id="themeToggle">🌙</button>
 </li>
 </ul>
 </nav>
 
-<section class="hero fade">
-<h1>Amisha <span>Patel</span></h1>
+<!-- HERO -->
+<section class="hero fade" id="home">
+<h1>Amisha Patel</h1>
+<h2><span id="typing"></span></h2>
+
 <p>
-Integrated MSc Mathematics student at NIT Rourkela working on
-machine learning, deep learning, and spatiotemporal prediction systems.
+Integrated MSc Mathematics student at NIT Rourkela with strong interest in
+machine learning, deep learning, and spatiotemporal modeling.
+Experienced in satellite-based prediction systems, ML pipelines,
+and real-world AI deployment.
 </p>
 
-<a class="btn" href="#projects">View Projects</a>
-<a class="btn outline" href="./cv.pdf" target="_blank">Download CV</a>
+<div class="links" style="margin-top:25px">
+<a href="#projects">View Projects</a>
+<a href="./cv.pdf" target="_blank">Download CV</a>
+<a href="https://github.com/amishapatel20" target="_blank">GitHub</a>
+</div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects" class="fade">
-<h2>Projects</h2>
+<h3 class="section-title">Projects & Research</h3>
 
-<div class="grid">
-
-<div class="card">
-<h3>🔥 Agnirodhak — Forest Fire Early Warning</h3>
-<span class="badge">U-Net</span>
-<span class="badge">Satellite</span>
-<span class="badge">Deep Learning</span>
+<div class="block">
+<h4>Agnirodhak — Forest Fire Early Warning System</h4>
+<span>Deep Learning · Satellite Data · U-Net</span>
 <p>
-Next-day forest fire risk prediction system using satellite-derived
-geospatial features and convolutional segmentation models.
+Developed a next-day forest fire prediction system for Uttarakhand using
+satellite-derived vegetation indices, terrain attributes, and historical
+fire occurrence data. Implemented U-Net segmentation for pixel-wise
+risk estimation and built a complete preprocessing and visualization pipeline.
 </p>
 </div>
 
-<div class="card">
-<h3>📦 Amazon ML Challenge</h3>
-<span class="badge">LightGBM</span>
-<span class="badge">Ensemble</span>
-<span class="badge">NLP</span>
+<div class="block">
+<h4>Amazon ML Challenge — Smart Product Pricing</h4>
+<span>Machine Learning · Ensemble Models · NLP</span>
 <p>
-Multimodal product price prediction combining text embeddings,
-image features, and structured metadata.
+Built an end-to-end ML pipeline combining TF-IDF text features, MiniLM sentence
+embeddings, image-derived statistics, and structured metadata.
+Evaluated LightGBM, HistGradientBoosting, and Ridge regression models
+using SMAPE and RMSE metrics.
 </p>
 <a href="https://github.com/amishapatel20/Amazon_ml_Project" target="_blank">GitHub →</a>
 </div>
 
-<div class="card">
-<h3>🚦 SafeRoadAI</h3>
-<span class="badge">ML</span>
-<span class="badge">Risk Prediction</span>
+<div class="block">
+<h4>SafeRoadAI — Road Safety Risk Prediction</h4>
+<span>Applied Machine Learning</span>
 <p>
-Road safety scoring system using traffic, weather,
-and historical accident patterns.
+Developed a road-risk scoring system using accident records, weather patterns,
+and road geometry to identify high-risk travel zones.
 </p>
 </div>
 
-<div class="card">
-<h3>🫁 AuscultoML</h3>
-<span class="badge">Audio ML</span>
-<span class="badge">FFT</span>
+<div class="block">
+<h4>AuscultoML — Lung Sound Disease Classification</h4>
+<span>Audio Processing · Machine Learning</span>
 <p>
-Lung disease classification system using signal processing
-and supervised learning models.
+Implemented respiratory disease classification using FFT-based
+audio features and supervised learning models.
 </p>
 </div>
 
-</div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills" class="fade">
-<h2>Skills</h2>
+<h3 class="section-title">Technical Skills</h3>
 
 <div class="skills">
-<div class="skill">
-<b>Python</b>
-<div class="bar"><span style="width:95%"></span></div>
-</div>
-
-<div class="skill">
-<b>Machine Learning</b>
-<div class="bar"><span style="width:90%"></span></div>
-</div>
-
-<div class="skill">
-<b>Deep Learning</b>
-<div class="bar"><span style="width:85%"></span></div>
-</div>
-
-<div class="skill">
-<b>Data Engineering</b>
-<div class="bar"><span style="width:80%"></span></div>
-</div>
-
-<div class="skill">
-<b>FastAPI</b>
-<div class="bar"><span style="width:70%"></span></div>
-</div>
-
-<div class="skill">
-<b>Visualization</b>
-<div class="bar"><span style="width:85%"></span></div>
-</div>
+<div class="skill">Python</div>
+<div class="skill">Machine Learning</div>
+<div class="skill">Deep Learning</div>
+<div class="skill">PyTorch</div>
+<div class="skill">scikit-learn</div>
+<div class="skill">Google Earth Engine</div>
+<div class="skill">FastAPI</div>
+<div class="skill">SQL</div>
+<div class="skill">OpenCV</div>
+<div class="skill">Git</div>
 </div>
 </section>
 
+<!-- CV -->
 <section id="cv" class="fade">
-<h2>Curriculum Vitae</h2>
+<h3 class="section-title">Curriculum Vitae</h3>
 <iframe src="./cv.pdf"></iframe>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="fade">
-<h2>Contact</h2>
+<h3 class="section-title">Contact</h3>
 <p>Email: amishanitr23july@gmail.com</p>
 <p>GitHub: <a href="https://github.com/amishapatel20" target="_blank">github.com/amishapatel20</a></p>
 </section>
 
 <footer>
-© 2026 Amisha Patel • Machine Learning Portfolio
+© 2026 Amisha Patel
 </footer>
 
 <script>
+/* typing animation */
+const text="Machine Learning Researcher • Applied AI • Risk Modeling";
+let i=0;
+setInterval(()=>{
+  if(i<text.length){
+    document.getElementById("typing").innerHTML+=text.charAt(i++);
+  }
+},70);
+
+/* scroll reveal */
 const obs=new IntersectionObserver(e=>{
-e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});
+  e.forEach(x=>{
+    if(x.isIntersecting) x.target.classList.add("show");
+  });
 });
 document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
+
+/* nav highlight */
+const links=document.querySelectorAll("nav a");
+window.addEventListener("scroll",()=>{
+  let fromTop=window.scrollY+120;
+  links.forEach(link=>{
+    let sec=document.querySelector(link.getAttribute("href"));
+    if(sec && sec.offsetTop<=fromTop &&
+        sec.offsetTop+sec.offsetHeight>fromTop){
+      links.forEach(l=>l.classList.remove("active"));
+      link.classList.add("active");
+    }
+  });
+});
+
+/* dark mode */
+const toggle=document.getElementById("themeToggle");
+function setTheme(mode){
+  if(mode==="dark"){
+    document.body.classList.add("dark");
+    toggle.textContent="☀️";
+    localStorage.setItem("theme","dark");
+  }else{
+    document.body.classList.remove("dark");
+    toggle.textContent="🌙";
+    localStorage.setItem("theme","light");
+  }
+}
+const saved=localStorage.getItem("theme");
+if(saved==="dark") setTheme("dark");
+
+toggle.addEventListener("click",()=>{
+  document.body.classList.contains("dark")
+    ? setTheme("light")
+    : setTheme("dark");
+});
 </script>
 
 </body>
