@@ -55,7 +55,12 @@ justify-content:space-between;
 list-style:none;
 }
 
-nav a{margin-left:25px;font-weight:600;color:var(--text);}
+nav a{
+margin-left:25px;
+font-weight:600;
+color:var(--text);
+}
+
 nav a:hover{color:var(--accent);}
 
 .hero{
@@ -130,10 +135,19 @@ width:100%;
 height:520px;
 border-radius:14px;
 border:1px solid #0f172a;
+background:white;
 }
 
-.fade{opacity:0;transform:translateY(40px);transition:1s;}
-.fade.show{opacity:1;transform:none;}
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:none;
+}
 
 footer{
 text-align:center;
@@ -169,7 +183,7 @@ and end-to-end deployment of AI systems.
 </p>
 
 <a class="btn" href="#agnirodhak">Flagship Research</a>
-<a class="btn outline" href="cv.pdf" target="_blank">Download CV</a>
+<a class="btn outline" href="./cv.pdf" target="_blank">Download CV</a>
 </section>
 
 <section id="research" class="fade">
@@ -223,15 +237,11 @@ The model achieves stable next-day forecasts with approximately
 Predicted high-risk zones are visualized through an interactive web dashboard.
 </p>
 
-<p>
-📄 <a href="agnirodhak_abstract.pdf" target="_blank">Project Abstract (PDF)</a>
-</p>
+<p>📄 <a href="./agnirodhak_abstract.pdf" target="_blank">Project Abstract (PDF)</a></p>
 
-<p>
-🗺️ Visualization Demo (GIF will load automatically once uploaded)
-</p>
-
-<img src="agnirodhak_demo.gif" style="width:100%;border-radius:12px;" alt="Fire Risk Prediction Map">
+<img src="./agnirodhak_demo.gif"
+     alt="Forest Fire Risk Prediction"
+     style="width:100%;border-radius:12px;margin-top:20px;">
 </div>
 </section>
 
@@ -253,7 +263,8 @@ weather conditions, traffic density, and road geometry.
 Medical audio analysis pipeline using FFT-based signal processing and
 Random Forest classifiers for respiratory disease detection.
 </p>
-<a href="https://github.com/amishapatel20/AuscultoML-Lung-Sound-Disease-Classification" target="_blank">GitHub →</a>
+<a href="https://github.com/amishapatel20/AuscultoML-Lung-Sound-Disease-Classification"
+   target="_blank">GitHub →</a>
 </div>
 
 <div class="card">
@@ -261,19 +272,22 @@ Random Forest classifiers for respiratory disease detection.
 <p>
 Exploratory analytics platform visualizing global crime trends across four decades.
 </p>
-<a href="https://github.com/amishapatel20/Global-Crime-Analysis-" target="_blank">GitHub →</a>
+<a href="https://github.com/amishapatel20/Global-Crime-Analysis-" target="_blank">
+GitHub →
+</a>
 </div>
 </section>
 
 <section id="cv" class="fade">
 <h2>Curriculum Vitae</h2>
-<iframe src="cv.pdf"></iframe>
+<iframe src="./cv.pdf"></iframe>
 </section>
 
 <section id="contact" class="fade">
 <h2>Contact</h2>
 <p>Email: amishanitr23july@gmail.com</p>
-<p>GitHub: https://github.com/amishapatel20</p>
+<p>GitHub: <a href="https://github.com/amishapatel20" target="_blank">
+github.com/amishapatel20</a></p>
 </section>
 
 <footer>
@@ -281,12 +295,16 @@ Exploratory analytics platform visualizing global crime trends across four decad
 </footer>
 
 <script>
-const o=new IntersectionObserver(e=>{
-e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add("show");
+}
 });
-document.querySelectorAll(".fade").forEach(el=>o.observe(el));
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
-
