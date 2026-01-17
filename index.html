@@ -2,225 +2,302 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amisha Patel | Research Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-    font-family: Poppins, sans-serif;
-    background:#020617;
-    color:#e5e7eb;
-    scroll-behavior:smooth;
+:root {
+    --bg:#020617;
+    --card:#020617;
+    --accent:#38bdf8;
+    --text:#e5e7eb;
+    --muted:#94a3b8;
 }
 
-a { color:#38bdf8; text-decoration:none; }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-header {
-    height:100vh;
-    background:linear-gradient(135deg,#020617,#1e293b);
+body{
+    font-family:Inter, sans-serif;
+    background:linear-gradient(180deg,#020617,#020617,#020617);
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(2,6,23,0.9);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+    border-bottom:1px solid #0f172a;
+}
+nav ul{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    list-style:none;
+}
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:600;
+    margin-left:25px;
+}
+nav a:hover{color:var(--accent);}
+
+/* HERO */
+.hero{
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:120px 30px 60px;
 }
-
-header h1 {
-    font-size:3.5rem;
+.hero h1{
+    font-size:3.6rem;
+    font-weight:800;
 }
-
-header p {
-    opacity:0.85;
-    margin-top:10px;
+.hero span{color:var(--accent);}
+.hero p{
+    max-width:750px;
+    margin:20px auto;
+    color:var(--muted);
+    font-size:1.1rem;
 }
-
-.btn {
-    margin-top:25px;
-    padding:12px 30px;
-    border-radius:30px;
-    background:#38bdf8;
+.hero .btns a{
+    display:inline-block;
+    margin:15px 10px;
+    padding:14px 34px;
+    border-radius:40px;
+    background:var(--accent);
     color:black;
-    font-weight:600;
-    transition:0.3s;
+    font-weight:700;
+    text-decoration:none;
+}
+.hero .btns a.outline{
+    background:none;
+    color:var(--accent);
+    border:2px solid var(--accent);
 }
 
-.btn:hover {
-    background:white;
-}
-
-section {
-    max-width:1100px;
+/* SECTIONS */
+section{
+    max-width:1200px;
     margin:auto;
-    padding:80px 30px;
+    padding:90px 30px;
 }
-
-h2 {
+h2{
     font-size:2.2rem;
-    border-left:6px solid #38bdf8;
+    margin-bottom:40px;
+    border-left:6px solid var(--accent);
     padding-left:15px;
-    margin-bottom:40px;
 }
 
-.card {
-    background:#020617;
-    border-radius:16px;
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+.card{
+    background:linear-gradient(180deg,#020617,#020617);
+    border-radius:18px;
     padding:35px;
-    margin-bottom:40px;
-    box-shadow:0 0 30px rgba(56,189,248,0.15);
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.8s;
+    box-shadow:0 0 35px rgba(56,189,248,0.12);
+    transition:.4s;
 }
-
-.card.visible {
-    opacity:1;
-    transform:translateY(0);
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 50px rgba(56,189,248,0.25);
 }
-
-.card h3 {
-    color:#38bdf8;
+.card h3{
+    color:var(--accent);
     margin-bottom:10px;
 }
 
-.timeline {
-    border-left:3px solid #38bdf8;
-    padding-left:30px;
+/* CV */
+.cvbox{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+.cvbox iframe{
+    width:100%;
+    height:500px;
+    border-radius:12px;
+    border:1px solid #0f172a;
 }
 
-.timeline div {
-    margin-bottom:35px;
-}
-
-footer {
+/* FOOTER */
+footer{
     text-align:center;
-    padding:30px;
+    padding:40px;
     background:#020617;
-    opacity:0.8;
+    color:var(--muted);
+}
+
+/* ANIMATIONS */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+.fade.show{
+    opacity:1;
+    transform:none;
+}
+
+@media(max-width:900px){
+    .cvbox{grid-template-columns:1fr;}
+    .hero h1{font-size:2.6rem;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Amisha Patel</h1>
-    <p>Integrated MSc Mathematics · Machine Learning Researcher</p>
-    <p>NIT Rourkela</p>
+<nav>
+<ul>
+<li><b>Amisha Patel</b></li>
+<li>
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#projects">Projects</a>
+<a href="#cv">CV</a>
+<a href="#contact">Contact</a>
+</li>
+</ul>
+</nav>
 
-    <a class="btn" href="cv.pdf" target="_blank">Download CV</a>
-</header>
-
-<section>
-<h2>About Me</h2>
+<section class="hero">
+<h1>Amisha <span>Patel</span></h1>
 <p>
-I am an Integrated MSc Mathematics student at NIT Rourkela with a strong interest in
+Mathematics undergraduate at NIT Rourkela working at the intersection of
 machine learning, artificial intelligence, and applied mathematical modeling.
-My research experience spans healthcare analytics, road safety prediction,
-and spatiotemporal deep learning using satellite and structured datasets.
+Experienced in healthcare AI, climate-risk prediction, and large-scale data systems.
+</p>
+<div class="btns">
+<a href="cv.pdf" target="_blank">Download CV</a>
+<a class="outline" href="https://github.com/amishapatel20" target="_blank">GitHub</a>
+</div>
+</section>
+
+<section id="about" class="fade">
+<h2>About</h2>
+<p>
+I am currently pursuing an Integrated MSc in Mathematics at NIT Rourkela.
+My academic interests include machine learning, probabilistic modeling,
+deep learning for spatiotemporal data, and AI-driven decision systems.
+I enjoy bridging rigorous mathematical foundations with real-world AI applications.
 </p>
 </section>
 
-<section>
+<section id="research" class="fade">
 <h2>Research Experience</h2>
 
+<div class="grid">
 <div class="card">
-<h3>Forest Fire Risk Prediction (Summer Research Intern)</h3>
+<h3>Forest Fire Risk Prediction</h3>
 <p>
-Developed a production-grade deep learning system for next-day forest fire risk prediction
-using satellite imagery and geospatial data. Built scalable ETL pipelines processing
+Developed a scalable deep learning system for next-day forest fire risk prediction
+using satellite imagery and geospatial features. Built ETL pipelines handling
 30M+ samples and trained a U-Net segmentation model achieving 93% pixel accuracy.
 </p>
-<p><b>Tech:</b> TensorFlow · U-Net · Google Earth Engine · FastAPI · React</p>
 </div>
 
+<div class="card">
+<h3>Healthcare Machine Learning</h3>
+<p>
+Built medical audio classification systems using lung auscultation sounds.
+Designed FFT-based interpretable features and trained Random Forest classifiers
+for respiratory disease detection.
+</p>
+</div>
+</div>
 </section>
 
-<section>
+<section id="projects" class="fade">
 <h2>Projects</h2>
 
-<div class="card">
-<h3>🚦 SafeRoadAI — Intelligent Road Safety Prediction</h3>
-<p>
-SafeRoadAI predicts real-time travel risk using weather conditions, traffic density,
-road geometry, and historical accident patterns. The system outputs safety scores,
-risk levels, and nearby danger zones via an interactive web interface.
-</p>
-<p><b>Tech:</b> Python · ML · FastAPI · Geospatial Analysis</p>
-<a href="https://github.com/amishapatel20/SafeRoadAI" target="_blank">GitHub →</a>
-</div>
+<div class="grid">
 
 <div class="card">
-<h3>🌍 Global Crime Analysis Dashboard</h3>
+<h3>🚦 SafeRoadAI</h3>
 <p>
-Interactive analytics platform visualizing worldwide crime trends across 40 years of data.
-Allows exploration of violent crime rates, geographical distributions,
-and long-term temporal patterns.
+Intelligent road safety prediction system generating safety scores,
+risk levels, and danger-zone visualization using ML-based pipelines.
 </p>
-<p><b>Tech:</b> Python · Data Visualization · Data Analysis</p>
-<a href="https://github.com/amishapatel20/Global-Crime-Analysis-" target="_blank">GitHub →</a>
+<a href="https://github.com/amishapatel20/SafeRoadAI" target="_blank">View Project →</a>
 </div>
 
 <div class="card">
-<h3>🫁 Lung Sound Disease Classifier</h3>
+<h3>🫁 AuscultoML</h3>
 <p>
-End-to-end audio ML pipeline for classifying lung diseases using FFT-based signal features
-and Random Forest classifiers. Achieved 91% test accuracy under class imbalance.
+Medical lung sound disease classification using FFT band-energy features
+and Random Forest models with FastAPI deployment.
 </p>
-<p><b>Tech:</b> Librosa · FFT · Random Forest · FastAPI</p>
+<a href="https://github.com/amishapatel20/AuscultoML-Lung-Sound-Disease-Classification" target="_blank">
+View Project →
+</a>
 </div>
 
-</section>
-
-<section>
-<h2>Timeline</h2>
-
-<div class="timeline">
-<div>
-<b>2022 – Present</b><br>
-Integrated MSc Mathematics, NIT Rourkela
+<div class="card">
+<h3>🌍 Global Crime Analysis</h3>
+<p>
+Interactive dashboard analyzing 40+ years of global crime trends
+with regional and temporal visualization.
+</p>
+<a href="https://github.com/amishapatel20/Global-Crime-Analysis-" target="_blank">
+View Project →
+</a>
 </div>
 
-<div>
-<b>2025</b><br>
-Summer Research Internship – Forest Fire Prediction
-</div>
-
-<div>
-<b>2025</b><br>
-Winner – T&P Hackathon (PostGini)
-</div>
-
-<div>
-<b>2025</b><br>
-Amazon ML Challenge – Top 300 worldwide
-</div>
 </div>
 </section>
 
-<section>
+<section id="cv" class="fade">
+<h2>Curriculum Vitae</h2>
+
+<div class="cvbox">
+<div>
+<p>
+You can preview my CV directly below or download the full version as PDF.
+</p>
+<br>
+<a class="btns" href="cv.pdf" target="_blank">Download CV</a>
+</div>
+
+<iframe src="cv.pdf"></iframe>
+</div>
+</section>
+
+<section id="contact" class="fade">
 <h2>Contact</h2>
 <p>Email: amishanitr23july@gmail.com</p>
 <p>GitHub: https://github.com/amishapatel20</p>
-<p>LinkedIn: https://linkedin.com</p>
 </section>
 
 <footer>
-© 2026 Amisha Patel
+© 2026 Amisha Patel · Research Portfolio
 </footer>
 
 <script>
-const observer = new IntersectionObserver(entries=>{
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
-if(e.isIntersecting){e.target.classList.add("visible");}
+if(e.isIntersecting)e.target.classList.add("show");
 });
 });
-
-document.querySelectorAll(".card").forEach(c=>observer.observe(c));
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 </script>
 
 </body>
 </html>
-
